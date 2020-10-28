@@ -76,3 +76,10 @@ class SwiftyImageDownloader: UIImageView {
         }
     }
 }
+
+//Extension to create redable file name by removing special characters from url
+extension String {
+    func fileName() -> String {
+        return self.replacingOccurrences(of: "[/+.:.-]", with: "", options: .regularExpression, range: nil)
+    }
+}
